@@ -1,0 +1,64 @@
+{% extends './base.html'%} {% load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <div class="content">
+<!-- Recent Sales Start -->
+  <div class="row g-4">
+    
+  <div class="bg-secondary text-center rounded p-4">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+          <h6 class="mb-0">PG</h6>
+          <a href="">Show All</a>
+      </div>
+      <div class="table-responsive">
+          <table class="table text-start align-middle table-bordered table-hover mb-0">
+              <thead>
+                  <tr class="text-white">
+                      
+                      <th scope="col">PG Name</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Rooms</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for i in pglist %}
+                <tr>
+                  <td>
+                    <i class="fab fa-angular fa-lg text-danger me-3"></i>
+                    <strong>{{i.name}}</strong>
+                    
+                  </td>
+                  <td>{{i.gender}}</td>
+                  <td>{{i.rooms}}</td>
+                  <td>{{i.price}}</td>
+
+                  <td>
+                    {{i.pg_addres}}
+                  </td>
+                  <td><a class="btn btn-sm btn-primary" href="../getpgdetails/">Detail</a></td>
+                </tr>
+        
+                {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<!-- Recent Sales End -->
+  </div>
+
+</body>
+</html>
+{% endblock content %}
